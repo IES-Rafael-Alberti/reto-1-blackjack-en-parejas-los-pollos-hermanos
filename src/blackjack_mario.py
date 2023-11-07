@@ -9,7 +9,8 @@ def inicio_juego():
     elif modo=="MULTIPLAYER":
         nombre_j1=input("Jugador 1, introduce tu nombre: ")
         nombre_j2=input("Jugador 2, introduce tu nombre: ")
-        return nombre_j1, nombre_j2
+        return nombre_j1 and nombre_j2
+print(inicio_juego())
 
 # Estado del jugador (PERDER/CONTINUAR JUGANDO/PLANTARSE)
 def estado_jugador(puntuacion, plantado):
