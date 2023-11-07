@@ -1,3 +1,6 @@
+import random
+
+
 def crear_baraja() -> str:
     return "A234567890JQK"
 
@@ -63,7 +66,7 @@ def info_jugador(nombre: str, mano: str, puntuacion: int) -> str:
     return " - {} - {} {}".format(nombre, mano, str(puntuacion))
 
 
-def resultado_final(nombre1, punt_j1, nombre2, punt_j2):
+def resultado_final(nombre1: str, punt_j1: int, nombre2: str, punt_j2: int) -> str:
     if punt_j1 > 21 and punt_j2 > 21:
         return "Game over ¡Los dos os habeis pasado!"
     elif punt_j1 <= 21 and punt_j1 == punt_j2:
@@ -72,3 +75,8 @@ def resultado_final(nombre1, punt_j1, nombre2, punt_j2):
         return "¡Gana J1 - " + nombre1
     else:
         return "¡Gana J2 - " + nombre2
+
+
+def dar_carta(baraja: str, mano: str) -> str:
+    mano += baraja[random.randint(0, len(baraja) - 1)]
+    return mano
